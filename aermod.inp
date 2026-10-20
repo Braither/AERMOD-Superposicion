@@ -1,0 +1,45 @@
+CO STARTING
+   TITLEONE Una Chimenea usando el AERMOD-PRIME Model
+   MODELOPT CONC FLAT
+   AVERTIME 24 PERIOD
+   POLLUTID NOX
+   RUNORNOT RUN
+   ERRORFIL  ERRORS3.OUT
+CO FINISHED
+
+SO STARTING
+** Line Source LE RE W VS SZ 
+** Lemis for emission rate (g/(sm^2)) Rel for stack height Widnt for stack widht SZ inital vertical dimension
+** Parameters: ----- ---- ---- ---- ---
+   LOCATION STACK1 LINE 0.0 3.30 -1500.0 1500.0
+   SRCPARAM STACK1 20.0 1.0 1.50 0.2
+   SRCGROUP ALL
+SO FINISHED
+
+
+RE STARTING
+   GRIDCART CAR1 STA
+   GRIDCART CAR1 XYINC -5000.0 200 50. -5000.0 200 50. 
+   GRIDCART CAR1 END
+RE FINISHED
+
+ME STARTING
+   SURFFILE  tpa2021_v22112.SFC
+   PROFFILE  tpa2021_v22112.PFL
+   SURFDATA  72211  2021  Tampa
+   SITEDATA  00001  2021  Tampa
+   UAIRDATA  72211  2021  Tampa
+   PROFBASE  1.0
+
+ME FINISHED
+
+OU STARTING
+
+   RECTABLE  allave first-second
+   MAXTABLE  allave    10000
+   SUMMFILE  aermod.sum
+
+OU FINISHED
+ 
+  CONC ALLAVE
+  FILEFORM CSV
